@@ -1,6 +1,7 @@
 import 'package:ecomerce_app/models/product.dart';
 import 'package:ecomerce_app/pages/product_description_page.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import '../models/shop.dart';
 
@@ -44,24 +45,20 @@ class ProductTile extends StatelessWidget {
         padding: const EdgeInsets.all(25),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            AspectRatio(
-              aspectRatio: 1,
-              child: Container(
-                  decoration: BoxDecoration(
-                      color: Theme.of(context).colorScheme.secondary,
-                      borderRadius: BorderRadius.circular(12)),
-                  padding: const EdgeInsets.all(25),
-                  width: double.infinity,
-                  child: Image.asset(product.imagePath)),
+            Center(
+              child: Image.asset(
+                product.imagePath,
+                height: 140,
+              ),
             ),
             const SizedBox(
               height: 15,
             ),
             Text(
               product.name,
-              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              style: GoogleFonts.dmSerifDisplay(
+                  fontSize: 22, fontWeight: FontWeight.bold),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
